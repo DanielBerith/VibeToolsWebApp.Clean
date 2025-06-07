@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{C1AE1E26-4043-41F0-AAE0-C08E60BEEEF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A200BFB6-888A-4919-B825-6120EE78BBBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{BE76C94B-E1E0-4E09-90E0-85DAB3A8D68E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0A077817-9C0B-4CBC-8109-756188253C8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{C32A8C8F-E8AA-441E-B93C-7DA00865F94B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibeToolsWebApp.Domain", "VibeToolsWebApp.Domain\VibeToolsWebApp.Domain.csproj", "{D7B64E13-EA83-483C-9AFD-EB7DB25D09A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7B64E13-EA83-483C-9AFD-EB7DB25D09A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7B64E13-EA83-483C-9AFD-EB7DB25D09A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7B64E13-EA83-483C-9AFD-EB7DB25D09A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7B64E13-EA83-483C-9AFD-EB7DB25D09A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1AE1E26-4043-41F0-AAE0-C08E60BEEEF7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A200BFB6-888A-4919-B825-6120EE78BBBA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{BE76C94B-E1E0-4E09-90E0-85DAB3A8D68E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0A077817-9C0B-4CBC-8109-756188253C8E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C32A8C8F-E8AA-441E-B93C-7DA00865F94B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{D7B64E13-EA83-483C-9AFD-EB7DB25D09A5} = {A200BFB6-888A-4919-B825-6120EE78BBBA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51D63805-AAE3-452D-AC44-66F0C5301499}
+	EndGlobalSection
+EndGlobal
