@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibeToolsWebApp.Application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibeToolsWebApp.Persistence", "VibeToolsWebApp.Persistence\VibeToolsWebApp.Persistence.csproj", "{416E4973-707C-4EB6-BA52-E025B5DB335C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibeToolsWebApp.API", "VibeToolsWebApp.API\VibeToolsWebApp.API.csproj", "{426C0B44-5665-44AC-88E2-724776B35879}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{416E4973-707C-4EB6-BA52-E025B5DB335C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{416E4973-707C-4EB6-BA52-E025B5DB335C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{416E4973-707C-4EB6-BA52-E025B5DB335C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{426C0B44-5665-44AC-88E2-724776B35879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426C0B44-5665-44AC-88E2-724776B35879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426C0B44-5665-44AC-88E2-724776B35879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426C0B44-5665-44AC-88E2-724776B35879}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{D7B64E13-EA83-483C-9AFD-EB7DB25D09A5} = {A200BFB6-888A-4919-B825-6120EE78BBBA}
 		{00C5F8B3-0904-448E-B195-ED18A2B7DC07} = {C32A8C8F-E8AA-441E-B93C-7DA00865F94B}
 		{416E4973-707C-4EB6-BA52-E025B5DB335C} = {BE76C94B-E1E0-4E09-90E0-85DAB3A8D68E}
+		{426C0B44-5665-44AC-88E2-724776B35879} = {C1AE1E26-4043-41F0-AAE0-C08E60BEEEF7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51D63805-AAE3-452D-AC44-66F0C5301499}

@@ -30,8 +30,19 @@ namespace VibeToolsWebApp.Application.Features.Tools.Commands.CreateTool
 
         public async Task<Guid> Handle(CreateToolCommand request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Handling CreateToolCommand: Name={Name}, Category={Category}",
-                                   request.Name, request.Category);
+            _logger.LogInformation(
+                "Handling CreateToolCommand: Name={Name}, Category={Category}",
+                request.Name, request.Category
+            );
+
+            // Check for duplicate name
+            var existingTools = await _toolRepository.SearchAsync(request.Name);
+            if (existingTools.Any(t =>
+                    string.Equals(t.Name, request.Name, StringComparison.OrdinalIgnoreCase)))
+            {
+                _logger.LogWarning("Tool creation aborted: a tool with Name='{Name}' already exists.", request.Name);
+                throw new InvalidOperationException($"A tool named '{request.Name}' already exists.");
+            }
 
             // Map the incoming command to our domain entity
             var tool = _mapper.Map<Tool>(request);
