@@ -19,7 +19,6 @@
             if (Reviews == null || !Reviews.Any())
             {
                 AverageRating = 0;
-                IsCommunityFavorite = false;
                 IsHidden = false;
                 return;
             }
@@ -32,8 +31,8 @@
                          .Select(r => r.Rating)
                          .ToList();
 
-            IsCommunityFavorite = latest5.Count == 5 && latest5.All(r => r == 5);
             IsHidden = latest5.Count == 5 && latest5.All(r => r == 1);
         }
+
     }
 }

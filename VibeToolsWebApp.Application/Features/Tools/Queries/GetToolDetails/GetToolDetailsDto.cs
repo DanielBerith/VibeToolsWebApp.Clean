@@ -22,7 +22,7 @@
     public class ReviewDto
     {
         public Guid Id { get; set; }
-
+        public string toolId { get; set; } = default!;
         public string Comment { get; set; } = default!;
 
         public int Rating { get; set; }

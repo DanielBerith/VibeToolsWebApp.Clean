@@ -42,10 +42,21 @@ namespace VibeToolsWebApp.API.Controllers
         /// POST /api/tools
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult<Guid>> Post([FromBody] CreateToolCommand command)
+        public async Task<IActionResult> Post([FromBody] CreateToolCommand command)
         {
-            var newId = await _mediator.Send(command);
-            return CreatedAtAction(nameof(Get), new { id = newId }, newId);
+            try
+            {
+                var newId = await _mediator.Send(command);
+                return CreatedAtAction(
+                    nameof(Get),
+                    new { id = newId },
+                    new { id = newId }
+                );
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
         }
     }
 }

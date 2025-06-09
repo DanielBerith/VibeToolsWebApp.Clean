@@ -28,29 +28,37 @@ namespace VibeToolsWebApp.Application.Features.Tools.Queries.GetTools
         }
 
         public async Task<IEnumerable<GetToolsDto>> Handle(
-            GetToolsQuery request,
-            CancellationToken cancellationToken
-        )
+        GetToolsQuery request,
+        CancellationToken cancellationToken
+    )
         {
             _logger.LogInformation(
                 "Handling GetToolsQuery (SearchTerm = {SearchTerm})",
                 request.SearchTerm
             );
 
-            // Fetch all matching tools
+            // 1) Retrieve and filter
             var tools = await _toolRepository.SearchAsync(request.SearchTerm);
+            var visible = tools.Where(t => !t.IsHidden);
 
-            // Filter out hidden tools
-            var visibleTools = tools.Where(t => !t.IsHidden);
+            // 2) Map to DTOs
+            var dtos = _mapper
+                .Map<IEnumerable<GetToolsDto>>(visible)
+                .ToList();   // materialize so we can scan
 
-            // Map domain entities to DTOs
-            var dtos = _mapper.Map<IEnumerable<GetToolsDto>>(visibleTools);
+            // 3) Find the highest average rating
+            if (dtos.Any())
+            {
+                var maxAvg = dtos.Max(d => d.AverageRating);
 
-            _logger.LogInformation(
-                "GetToolsQuery handled: returned {Count} tools",
-                dtos.Count()
-            );
+                // 4) Mark any DTO with that highest rating as community favorite
+                foreach (var dto in dtos)
+                {
+                    dto.IsCommunityFavorite = dto.AverageRating == maxAvg;
+                }
+            }
 
+            _logger.LogInformation("GetToolsQuery handled: returned {Count} tools", dtos.Count);
             return dtos;
         }
     }
