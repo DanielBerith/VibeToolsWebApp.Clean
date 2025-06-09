@@ -13,5 +13,6 @@ namespace VibeToolsWebApp.Application.Features.Tools.Queries.GetTools
         public string Category { get; set; } = default!;
         public decimal AverageRating { get; set; }
         public bool IsCommunityFavorite { get; set; }
+        public bool IsHidden { get; set; }
     }
 }
